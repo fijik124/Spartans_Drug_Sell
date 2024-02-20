@@ -19,7 +19,7 @@ RegisterNetEvent('veeq_drugselling:sellmarycha', function()
     local cenamarychy = math.random(Config.WeedPriceMin, Config.WeedPriceMax) * x
 
     xPlayer.removeInventoryItem(Config.WeedItem, x)
-    xPlayer.addInventoryItem('black_money', cenamarychy)
+    xPlayer.addInventoryItem('money', cenamarychy)
 
     TriggerClientEvent('ox_lib:notify', source, {
         title = _U("yousold") .. x .. "g " .. _U("for") .. cenamarychy .. _U("currency"),
@@ -48,7 +48,7 @@ RegisterNetEvent('veeq_drugselling:sellmeta', function()
     local cenamety = math.random(Config.MethPriceMin, Config.MethPriceMax) * x
 
     xPlayer.removeInventoryItem(Config.MethItem, x)
-    xPlayer.addInventoryItem('black_money', cenamety)
+    xPlayer.addInventoryItem('money', cenamety)
 
     TriggerClientEvent('ox_lib:notify', source, {
         title = _U("yousold") .. x .. "g " .. _U("for") .. cenamety .. _U("currency"),
@@ -79,7 +79,7 @@ RegisterNetEvent('veeq_drugselling:sellkoka', function()
     local cenakoki = math.random(Config.CokePriceMin, Config.CokePriceMax) * x
 
     xPlayer.removeInventoryItem(Config.CokeItem, x)
-    xPlayer.addInventoryItem('black_money', cenakoki)
+    xPlayer.addInventoryItem('money', cenakoki)
 
     TriggerClientEvent('ox_lib:notify', source, {
         title = _U("yousold") .. x .. "g " .. _U("for") .. cenakoki .. _U("currency"),
