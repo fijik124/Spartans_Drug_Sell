@@ -72,7 +72,16 @@ if numberofcops >= Config.NumberOfCops then
 						FreezeEntityPosition(npcPed, true)
 						loadAnimDict(Dictzastanowienie)
 						TaskPlayAnim(npcPed, Dictzastanowienie, Animzastanowienie, 8.0, -8.0, -1, modezastanowienie, 0, false, false, false)
-						exports['an_progBar']:run(Config.SellingTime,_U("negotiateprice"),'#E14127')
+						if lib.progressBar({
+							duration = Config.SellingTime*1000,
+							label = Config.SellingTime,_U("negotiateprice"),
+							useWhileDead = false,
+							canCancel = true,
+							disable = {
+								car = true,
+							},
+						}) then print('Do stuff when complete') else print('Do stuff when cancelled') end
+						-- exports['an_progBar']:run(Config.SellingTime,_U("negotiateprice"),'#E14127')
 						Citizen.Wait(Config.SellingTime*1000)
 						local playerCoords = GetEntityCoords(playerPed)
 
