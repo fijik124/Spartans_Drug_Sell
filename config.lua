@@ -1,12 +1,12 @@
 Config = {}
 
-Config.Locale = 'pl'
-Config.NumberOfCops = 1 -- Set to 0 to disable.
+Config.Locale = 'cs'
+Config.NumberOfCops = 0 -- Set to 0 to disable.
 
 --ITEMS--
-Config.WeedItem = "bagofdope"
-Config.MethItem = "meth"
-Config.CokeItem = "coke_pooch"
+Config.WeedItem = "weed_sativa"
+Config.MethItem = "pill_ecstasy"
+Config.CokeItem = "crack_cocaine"
 
 --CHANCES--
 Config.WeedChance = 70 -- The less, the less chance of selling the drug (0% - 100%)

@@ -12,7 +12,10 @@ client_scripts {
 	'client.lua',
 }
 
-shared_script 'config.lua'
+shared_script {
+	'@ox_lib/init.lua',
+	'config.lua',
+}
 
 server_script { 
 	'@es_extended/locale.lua',

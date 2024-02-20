@@ -72,17 +72,17 @@ if numberofcops >= Config.NumberOfCops then
 						FreezeEntityPosition(npcPed, true)
 						loadAnimDict(Dictzastanowienie)
 						TaskPlayAnim(npcPed, Dictzastanowienie, Animzastanowienie, 8.0, -8.0, -1, modezastanowienie, 0, false, false, false)
-						if lib.progressBar({
+						lib.progressBar({
 							duration = Config.SellingTime*1000,
-							label = Config.SellingTime,_U("negotiateprice"),
+							label = _U("negotiateprice"),
 							useWhileDead = false,
 							canCancel = true,
 							disable = {
 								car = true,
 							},
-						}) then print('Do stuff when complete') else print('Do stuff when cancelled') end
+						})
 						-- exports['an_progBar']:run(Config.SellingTime,_U("negotiateprice"),'#E14127')
-						Citizen.Wait(Config.SellingTime*1000)
+						--Citizen.Wait(Config.SellingTime*1000)
 						local playerCoords = GetEntityCoords(playerPed)
 
 						local npcCoords = GetEntityCoords(npcPed)
@@ -109,7 +109,7 @@ if numberofcops >= Config.NumberOfCops then
 								FreezeEntityPosition(oldped, false)
 								ClearPedTasks(oldped)
 								exports['ox_lib']:notify({
-									position = 'top',
+									position = 'top-right',
 									title = _U("cancel"),
 									icon = "fa-solid fa-cannabis",
 									type = 'error'
@@ -142,7 +142,7 @@ if numberofcops >= Config.NumberOfCops then
 							ClearPedTasks(oldped)
 							FreezeEntityPosition(oldped, false)
 							exports['ox_lib']:notify({
-								position = 'top',
+								position = 'top-right',
 								title = _U("toofar"),
 								icon = "fa-solid fa-cannabis",
 								type = 'error'
@@ -154,7 +154,7 @@ if numberofcops >= Config.NumberOfCops then
 		end 
 	else
 		exports['ox_lib']:notify({
-			position = 'top',
+			position = 'top-right',
 			title = _U("sameguy"),
 			icon = "fa-solid fa-cannabis",
 			type = 'error'
@@ -162,7 +162,7 @@ if numberofcops >= Config.NumberOfCops then
 	end
 else
 	exports['ox_lib']:notify({
-		position = 'top',
+		position = 'top-right',
 		title = _U("nopolice"),
 		icon = "fa-solid fa-cannabis",
 		type = 'error'
@@ -198,8 +198,17 @@ if numberofcops >= Config.NumberOfCops then
 						FreezeEntityPosition(npcPed, true)
 						loadAnimDict(Dictzastanowienie)
 						TaskPlayAnim(npcPed, Dictzastanowienie, Animzastanowienie, 8.0, -8.0, -1, modezastanowienie, 0, false, false, false)
-						exports['an_progBar']:run(Config.SellingTime,_U("negotiateprice"),'#E14127')
-						Citizen.Wait(Config.SellingTime*1000)
+						lib.progressBar({
+							duration = Config.SellingTime*1000,
+							label = _U("negotiateprice"),
+							useWhileDead = false,
+							canCancel = true,
+							disable = {
+								car = true,
+							},
+						})
+						--exports['an_progBar']:run(Config.SellingTime,_U("negotiateprice"),'#E14127')
+						--Citizen.Wait(Config.SellingTime*1000)
 						local playerCoords = GetEntityCoords(playerPed)
 
 						local npcCoords = GetEntityCoords(npcPed)
@@ -227,7 +236,7 @@ if numberofcops >= Config.NumberOfCops then
 								FreezeEntityPosition(oldped, false)
 								ClearPedTasks(oldped)
 								exports['ox_lib']:notify({
-									position = 'top',
+									position = 'top-right',
 									title = _U("cancel"),
 									icon = "fa-solid fa-pills",
 									type = 'error'
@@ -260,7 +269,7 @@ if numberofcops >= Config.NumberOfCops then
 			ClearPedTasks(oldped)
 			FreezeEntityPosition(oldped, false)
 			exports['ox_lib']:notify({
-				position = 'top',
+				position = 'top-right',
 				title = _U("toofar"),
 				icon = "fa-solid fa-pills",
 				type = 'error'
@@ -272,7 +281,7 @@ if numberofcops >= Config.NumberOfCops then
 	end 
 	else
 	exports['ox_lib']:notify({
-	position = 'top',
+	position = 'top-right',
 	title = _U("sameguy"),
 	icon = "fa-solid fa-pills",
 	type = 'error'
@@ -280,7 +289,7 @@ if numberofcops >= Config.NumberOfCops then
 	end
 else
 	exports['ox_lib']:notify({
-		position = 'top',
+		position = 'top-right',
 		title = _U("nopolice"),
 		icon = "fa-solid fa-pills",
 		type = 'error'
@@ -315,8 +324,17 @@ if numberofcops >= Config.NumberOfCops then
 		FreezeEntityPosition(npcPed, true)
 		loadAnimDict(Dictzastanowienie)
 		TaskPlayAnim(npcPed, Dictzastanowienie, Animzastanowienie, 8.0, -8.0, -1, modezastanowienie, 0, false, false, false)
-		exports['an_progBar']:run(Config.SellingTime,_U("negotiateprice"),'#E14127')
-		Citizen.Wait(Config.SellingTime*1000)
+		lib.progressBar({
+			duration = Config.SellingTime*1000,
+			label = _U("negotiateprice"),
+			useWhileDead = false,
+			canCancel = true,
+			disable = {
+				car = true,
+			},
+		})
+		--exports['an_progBar']:run(Config.SellingTime,_U("negotiateprice"),'#E14127')
+		--Citizen.Wait(Config.SellingTime*1000)
 		local playerCoords = GetEntityCoords(playerPed)
 		local npcCoords = GetEntityCoords(npcPed)
 						local distance = Vdist(playerCoords.x, playerCoords.y, playerCoords.z, npcCoords.x, npcCoords.y, npcCoords.z)
@@ -341,7 +359,7 @@ if numberofcops >= Config.NumberOfCops then
 								FreezeEntityPosition(oldped, false)
 								ClearPedTasks(oldped)
 								exports['ox_lib']:notify({
-									position = 'top',
+									position = 'top-right',
 									title = _U("cancel"),
 									icon = "fa-solid fa-prescription-bottle",
 									type = 'error'
@@ -374,7 +392,7 @@ if numberofcops >= Config.NumberOfCops then
 							ClearPedTasks(oldped)
 							FreezeEntityPosition(oldped, false)
 							exports['ox_lib']:notify({
-								position = 'top',
+								position = 'top-right',
 								title = _U("toofar"),
 								icon = "fa-solid fa-prescription-bottle",
 								type = 'error'
@@ -386,7 +404,7 @@ if numberofcops >= Config.NumberOfCops then
 		end 
 	else
 		exports['ox_lib']:notify({
-			position = 'top',
+			position = 'top-right',
 			title = _U("sameguy"),
 			icon = "fa-solid fa-prescription-bottle",
 			type = 'error'
@@ -394,7 +412,7 @@ if numberofcops >= Config.NumberOfCops then
 	end
 else
 	exports['ox_lib']:notify({
-		position = 'top',
+		position = 'top-right',
 		title = _U("nopolice"),
 		icon = "fa-solid fa-prescription-bottle",
 		type = 'error'
